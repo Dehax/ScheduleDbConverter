@@ -1,0 +1,27 @@
+﻿<Window x:Class="ScheduleNewDbToPdf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Schedule SQLite to PDF converter" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+    <Grid Margin="3">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label>Choose the SQLite database file (*.db) with schedule:</Label>
+        <TextBox x:Name="inputPathTextBox" Grid.Row="1" Margin="3"></TextBox>
+        <Button x:Name="chooseButton" Grid.Column="1" Grid.Row="1" Margin="3" IsDefault="True" Padding="5,2" Click="chooseButton_Click">Choose...</Button>
+        <Label Grid.Row="2">Page layout:</Label>
+        <CheckBox x:Name="isVerticalCheckBox" Grid.Row="3" Margin="10,2" Checked="VerticalCheckBox_Checked">Vertical</CheckBox>
+        <Label Grid.Row="4">Export processing:</Label>
+        <ProgressBar x:Name="exportProgressBar" Grid.Row="5" LargeChange="10" SmallChange="1" Height="20" Margin="3" />
+    </Grid>
+</Window>
